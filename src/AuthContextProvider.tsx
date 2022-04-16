@@ -1,14 +1,24 @@
-import React, {createContext, FC, ReactChild, useState} from "react";
+import {createContext, FC, ReactChild, useState} from "react";
 
 interface IAuthProvider {
     children: ReactChild
 }
 
+export type TUser = {
+    usrnm: string,
+    pass: string
+} 
+
+export type TUserContext = {
+    user: TUser|null
+    setUser: (user: TUser|null) => void
+}
 
 const AuthContext = createContext({});
 
 const AuthProvider:FC<IAuthProvider> = ({children}) =>{
-    const [user, setUser] = useState({})
+
+    const [user, setUser] = useState(null)
     return (
         <AuthContext.Provider value={{user, setUser}}>
             {children}
