@@ -44,9 +44,7 @@ const Register: React.FC = () => {
     setErrMsg("");
   }, [user, pwd, matchPwd]);
 
-  const handleSubmit: React.FormEventHandler<HTMLFormElement> | undefined = (
-    e
-  ) => {
+  const handleSubmit: React.FormEventHandler<HTMLFormElement> | undefined = (e) => {
     e.preventDefault();
     const userRegistrationData = {
       usrnm: user,
@@ -60,12 +58,11 @@ const Register: React.FC = () => {
     })
       .then((response) => {
         if (!response.ok) {
-          setErrMsg(response.statusText);
+          setErrMsg(response.status===409 ? "Username Taken" : response.statusText); //status code 409 thrown from the backend Conflict username taken
         } else {
           setSuccess(true);
         }
       })
-      //The only error in the backend is when the username is taken
       .catch(() => setErrMsg("Registration Failed"));
   };
   return (

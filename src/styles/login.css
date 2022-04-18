@@ -5,7 +5,7 @@
     box-sizing: border-box;
 }
 
-.register-section{
+.login-section{
     border: 1px solid #333;
     border-radius: .5rem;
     max-width: 450px;
@@ -16,7 +16,7 @@
     padding: 20px;
 }
 
-.register-form{
+.login-form{
   padding: .5rem;
   width: 100%;
   display: flex;
@@ -62,7 +62,7 @@ button {
     font-size: 1rem;
     padding: 0.5rem;
   }
-.register-div{
+.login-div{
     padding: .5rem;
     width: 100%;
     display: flex;
@@ -70,7 +70,7 @@ button {
     justify-content: space-evenly;
 }
 
-.register-instructions {
+.login-instructions {
   font-size: 0.75rem;
   border-radius: 0.5rem;
   background: #000;
@@ -80,7 +80,7 @@ button {
   bottom: -10px;
 }
 
-.register-instructions > svg {
+.login-instructions > svg {
   margin-right: 0.25rem;
 }
 
