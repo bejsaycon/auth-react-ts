@@ -1,5 +1,6 @@
 import "../styles/register.css";
 import { useRef, useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { faInfoCircle } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
@@ -179,7 +180,7 @@ const Register: React.FC = () => {
             <br />
             <span className="line">
               {/*put router link here*/}
-              <a href="#">Sign In</a>
+              <Link to='/login'>Sign In</Link>
             </span>
           </div>
         </section>

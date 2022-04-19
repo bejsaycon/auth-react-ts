@@ -1,8 +1,3 @@
-*{
-  margin: 0;
-  font-size: 10px;
-  line-height: 1.5;
-}
 
 .container{
   width: 80%;
@@ -20,28 +15,39 @@
 }
 
 #welcome-message{
+  font-size: 16px;
   font-weight: bold;
   text-align: center;
   line-height: 1.3;
 }
 
-button{
+.randomapp-button{
   padding: 15px;
   width: 20%;
   margin: auto;
   border:1px solid lightgray;
   border-radius: 6px;
-  font-size: 1.6rem;
+  font-size: 16px;
   margin: 0px 0px 30px 10px;
 }
+.randomapp-logout{
+  margin-top: 20px;
+  padding: 15px;
+  width: 20%;
+  margin: auto;
+  border:1px solid lightgray;
+  border-radius: 6px;
+  font-size: 16px;
+  margin: 20px 0px 30px 10px;
+}
 
-input{
+.randomapp-input{
   padding: 15px;
   width: 75%;
   margin: auto;
   border:1px solid lightgray;
   border-radius: 6px;
-  font-size: 1.6rem;
+  font-size: 16px;
   margin: 0px 0px 30px 0px; 
 }
 
@@ -75,6 +81,7 @@ img{
 }
 
 .user-details{
+font-size: 16px;
 padding: 10px;
 margin: 0px 0px 10px 0px;
 line-height: 1.0;
@@ -85,7 +92,7 @@ line-height: 1.0;
       margin:0
   }
   .head-text{
-      font-size: 1.3rem;
+      font-size: 13px;
   }
   img {
       max-width: 80%;

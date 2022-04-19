@@ -10,17 +10,16 @@ export type TUser = {
 } 
 
 export type TUserContext = {
-    user: TUser|null
-    setUser: (user: TUser|null) => void
+    auth: TUser|null
+    setAuth: (user: TUser|null) => void
 }
 
-const AuthContext = createContext({});
+const AuthContext = createContext<TUserContext>({} as TUserContext);
 
 const AuthProvider:FC<IAuthProvider> = ({children}) =>{
-
-    const [user, setUser] = useState(null)
+    const [auth, setAuth] = useState<TUser|null>(null)
     return (
-        <AuthContext.Provider value={{user, setUser}}>
+        <AuthContext.Provider value={{auth, setAuth}}>
             {children}
         </AuthContext.Provider>
     )

@@ -1,12 +1,14 @@
-// import { useAuth } from "../hooks/useAuth";
+import React from "react";
+import { Link } from "react-router-dom";
 
 function Home() {
 
-  return( 
-  <div className="homepage">
-      This is homepage
-  </div>
-        )
+  return (
+    
+    <div className="below-input-box head-text" id="welcome-message">
+      Welcome to Random user Generator. <Link to='/login'>Login</Link> to Proceed
+    </div>
+  );
 }
 
-export { Home };
+export default Home;

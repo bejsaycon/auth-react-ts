@@ -10,8 +10,8 @@ export const InputForm = ({setSeed}:SetState) => {
   };    
   return (
     <form className="form-container" onSubmit={handleSubmit}>
-      <input className="input" placeholder="Enter value" name="seed" required />
-      <button type="submit">Enter</button>
+      <input className="randomapp-input" placeholder="Enter value" name="seed" required />
+      <button className="randomapp-button" type="submit">Enter</button>
     </form>
   );
 };

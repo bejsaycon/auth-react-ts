@@ -1,9 +1,13 @@
 import "../styles/login.css";
-import { useRef, useState, useEffect, useContext } from "react";
+import { useState, useEffect} from "react";
 import axios from "../api/axios";
+import { useAuth } from "../hooks/useAuth";
+import { Link } from "react-router-dom"
+import Cookies from 'js-cookie'
 
 const Login: React.FC = () => {
   const LOGIN_URL = "/login";
+  const { setAuth } = useAuth();
   const [user, setUser] = useState("");
   const [pwd, setPwd] = useState("");
   const [errMsg, setErrMsg] = useState("");
@@ -31,11 +35,13 @@ const Login: React.FC = () => {
         }
       );
       console.log(JSON.stringify(response?.data));
-      // console.log(JSON.stringify(response));
-      const accessToken = response?.data?.accessToken;
-      const roles = response?.data?.roles;
-      setSuccess(true);
+      // const accessToken = response?.data?.accessToken;
+      // const roles = response?.data?.roles;
 
+      //setAuth Context and set cookies
+      setAuth({usrnm: user , pass: pwd});
+      Cookies.set('usrnm', user, { expires: 1 });
+      setSuccess(true);
       setUser("");
       setPwd("");
     } catch (err) {
@@ -55,7 +61,7 @@ const Login: React.FC = () => {
           <div className="login-div">
             <h1>Success!</h1>
             <br />
-            <a href="#">Go to App</a>
+            <Link to="/randomapp">Go to App</Link>
           </div>
         </section>
       ) : (
@@ -92,8 +98,7 @@ const Login: React.FC = () => {
         Need Account?
         <br />
         <span className="line">
-          {/*put router link here*/}
-          <a href="#">Sign Up</a>
+          <Link to="/register">Sign Up</Link>
         </span>
       </div>
     </section> )}
