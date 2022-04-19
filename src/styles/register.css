@@ -94,6 +94,7 @@ button {
 }
 
 .errmsg {
+  border-radius: .25em;
   background-color: lightpink;
   color: firebrick;
   font-weight: bold;

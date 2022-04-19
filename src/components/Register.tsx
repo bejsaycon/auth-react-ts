@@ -44,7 +44,9 @@ const Register: React.FC = () => {
     setErrMsg("");
   }, [user, pwd, matchPwd]);
 
-  const handleSubmit: React.FormEventHandler<HTMLFormElement> | undefined = (e) => {
+  const handleSubmit: React.FormEventHandler<HTMLFormElement> | undefined = (
+    e
+  ) => {
     e.preventDefault();
     const userRegistrationData = {
       usrnm: user,
@@ -58,12 +60,14 @@ const Register: React.FC = () => {
     })
       .then((response) => {
         if (!response.ok) {
-          setErrMsg(response.status===409 ? "Username Taken" : response.statusText); //status code 409 thrown from the backend Conflict username taken
+          setErrMsg(
+            response.status === 409 ? "Username Taken" : response.statusText
+          ); //status code 409 indicates conflict therefore username taken
         } else {
           setSuccess(true);
         }
       })
-      .catch(() => setErrMsg("Registration Failed"));
+      .catch(() => setErrMsg("No Server Response"));
   };
   return (
     <>
@@ -154,7 +158,7 @@ const Register: React.FC = () => {
               <div
                 id="confirmnote"
                 className={
-                  matchFocus && !validMatch
+                   matchFocus && !validMatch
                     ? "register-instructions"
                     : "offscreen"
                 }

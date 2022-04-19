@@ -61,7 +61,8 @@ button {
     margin-top: 20px;
     font-size: 1rem;
     padding: 0.5rem;
-  }
+}
+
 .login-div{
     padding: .5rem;
     width: 100%;
@@ -70,30 +71,13 @@ button {
     justify-content: space-evenly;
 }
 
-.login-instructions {
-  font-size: 0.75rem;
-  border-radius: 0.5rem;
-  background: #000;
-  color: #fff;
-  padding: 0.25rem;
-  position: relative;
-  bottom: -10px;
-}
-
-.login-instructions > svg {
-  margin-right: 0.25rem;
-}
-
 .offscreen {
   position: absolute;
   left: -9999px;
 }
 
-.hide {
-  display: none;
-}
-
 .errmsg {
+  border-radius: .25em;
   background-color: lightpink;
   color: firebrick;
   font-weight: bold;
