@@ -32,10 +32,11 @@ function App() {
       <Routes>
         <Route path="/" element={<Layout />}>
 
-          <Route path="/" element={<Home />} />
+          
     
           {/* we want to protect these routes by logging out */}
           <Route element={<RequireLogout />}>
+            <Route path="/" element={<Home />} />
             <Route path="login" element={<Login />} />
             <Route path="register" element={<Register />} />
           </Route>

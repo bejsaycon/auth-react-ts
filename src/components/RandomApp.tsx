@@ -22,7 +22,7 @@ const RandomApp = () => {
     await Cookies.remove('usrnm');
     await Cookies.remove('pwd');
     setAuth(null);
-    navigate('/register');
+    navigate('/');
 }
   return (
     <div className="container">
