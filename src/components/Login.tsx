@@ -37,12 +37,13 @@ const Login: React.FC = () => {
       console.log(JSON.stringify(response?.data));
       // const accessToken = response?.data?.accessToken;
       // const roles = response?.data?.roles;
+      const hashedPass = response?.data?.foundPass;
 
       //setAuth Context and set cookies
       Cookies.set('usrnm', user, { expires: 1 });
-      Cookies.set('pwd', pwd, { expires: 1 });
-      
-      setAuth({usrnm: user , pass: pwd});
+      Cookies.set('pwd', hashedPass, { expires: 1 });
+
+      setAuth({usrnm: user , pass: hashedPass});
       
 
       setSuccess(true);
