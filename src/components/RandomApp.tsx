@@ -19,8 +19,9 @@ const RandomApp = () => {
   const defVal: Results = useProfile();
 
   const handleLogout = async () => {
+    await Cookies.remove('usrnm');
+    await Cookies.remove('pwd');
     setAuth(null);
-    Cookies.remove('usrnm');
     navigate('/register');
 }
   return (

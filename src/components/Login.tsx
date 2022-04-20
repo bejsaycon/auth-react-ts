@@ -39,8 +39,12 @@ const Login: React.FC = () => {
       // const roles = response?.data?.roles;
 
       //setAuth Context and set cookies
-      setAuth({usrnm: user , pass: pwd});
       Cookies.set('usrnm', user, { expires: 1 });
+      Cookies.set('pwd', pwd, { expires: 1 });
+      
+      setAuth({usrnm: user , pass: pwd});
+      
+
       setSuccess(true);
       setUser("");
       setPwd("");

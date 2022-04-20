@@ -16,8 +16,9 @@ function App() {
 
   const readCookie = () => {
     const username = Cookies.get("usrnm");
-    if (username) {
-      setAuth({ usrnm: username, pass: "vibe-check-xd" });
+    const password = Cookies.get("pwd")
+    if (username && password) {
+      setAuth({ usrnm: username, pass: password});
     }
   };
 
@@ -30,7 +31,9 @@ function App() {
     <div className="App">
       <Routes>
         <Route path="/" element={<Layout />}>
+
           <Route path="/" element={<Home />} />
+    
           {/* we want to protect these routes by logging out */}
           <Route element={<RequireLogout />}>
             <Route path="login" element={<Login />} />
@@ -43,11 +46,9 @@ function App() {
           </Route>
 
           <Route path="*" element={<Missing />} />
+
         </Route>
       </Routes>
-
-      {/* <Register />
-      <Login /> */}
     </div>
   );
 }
