@@ -78,7 +78,7 @@ const Register: React.FC = () => {
           <div className="register-div">
             <h1>Success!</h1>
             <br />
-            <a href="#">Sign In</a>
+            <Link to='/login'>Sign In</Link>
           </div>
         </section>
       ) : (
